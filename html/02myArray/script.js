@@ -13,7 +13,7 @@ let counter = 0;
 let hit = 0;
 
 
-for(let i=0; i<maxPoints; i++)
+for(let i = 0; i < maxPoints; i++)
 {
   addPoint("rgba(255,0,0,1)");
 }
@@ -26,8 +26,8 @@ window.addEventListener('click',(e)=>{
   mouse.dy = e.clientY;
 
   for (var i = 0; i < points.length; i++) {
-    difference.differenceVector(points[i].position,mouse);
-     if(difference.magnitude<points[i].radius)
+    difference.differenceVector(points[i].position, mouse);
+     if(difference.magnitude < points[i].radius)
      {
        points[i].color = "rgba(0,0,255,1)";
        hit++;
@@ -39,7 +39,7 @@ window.addEventListener('click',(e)=>{
     hit = 0;
     counter = 0;
     points.splice(0, maxPoints)
-    for (var i = 0; i<maxPoints; i++)
+    for (var i = 0; i < maxPoints; i++)
     {
       addPoint("rgba(255,0,0,1)");
     }
@@ -47,10 +47,10 @@ window.addEventListener('click',(e)=>{
 });
 
 function animate() {
-  context.clearRect(0,0,width,height);
+  context.clearRect(0, 0, width, height);
   requestAnimationFrame(animate);
 
-  for(let i = 0; i<points.length; i++)
+  for(let i = 0; i < points.length; i++)
   {
     points[i].draw(context);
   }
@@ -67,7 +67,7 @@ function getRandom(max)
 
 function addPoint(color)
 {
-  let A = new Point(new Vector2d(getRandom(width),getRandom(height)),50,color,"hallos");
+  let A = new Point(new Vector2d(getRandom(width),getRandom(height)), 50, color, "hallos");
   A.label = counter;
   counter++;
   points.push(A);
