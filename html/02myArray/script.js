@@ -25,13 +25,13 @@ window.addEventListener('click',(e)=>{
   mouse.dx = e.clientX;
   mouse.dy = e.clientY;
 
-  for (var i = 0; i < points.length; i++) {
+  for (let i = 0; i < points.length; i++) {
     difference.differenceVector(points[i].position, mouse);
      if(difference.magnitude < points[i].radius)
      {
        points[i].color = "rgba(0,0,255,1)";
        hit++;
-     };
+     }
    }
    console.log(hit);
   if(hit >= maxPoints)
@@ -39,7 +39,7 @@ window.addEventListener('click',(e)=>{
     hit = 0;
     counter = 0;
     points.splice(0, maxPoints)
-    for (var i = 0; i < maxPoints; i++)
+    for (let i = 0; i < maxPoints; i++)
     {
       addPoint("rgba(255,0,0,1)");
     }
