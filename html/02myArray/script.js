@@ -61,13 +61,13 @@ animate();
 
 function getRandom(max)
 {
-  let ans = Math.floor(Math.random()*max);
-  return ans;
+  let rand = Math.floor(Math.random()* max);
+  return rand;
 }
 
 function addPoint(color)
 {
-  let A = new Point(new Vector2d(getRandom(width),getRandom(height)), 50, color, "hallos");
+  let A = new Point(new Vector2d(getRandom(width),getRandom(height)), 50, color, "Miku");
   A.label = counter;
   counter++;
   points.push(A);
