@@ -67,8 +67,8 @@ function getRandom(max)
 
 function addPoint(color)
 {
-  let A = new Point(new Vector2d(getRandom(width),getRandom(height)), 50, color, "Miku");
-  A.label = counter;
+  let a = new Point(new Vector2d(getRandom(width),getRandom(height)), 50, color, "Miku");
+  a.label = counter;
   counter++;
-  points.push(A);
+  points.push(a);
 }
