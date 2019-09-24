@@ -61,7 +61,7 @@ animate();
 
 function getRandom(max)
 {
-  let rand = Math.floor(Math.random()* max);
+  let rand = Math.floor(Math.random() * max);
   return rand;
 }
 
