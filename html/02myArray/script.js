@@ -28,11 +28,11 @@ window.addEventListener('click',(e)=>{
     difference.differenceVector(points[i].position,mouse);
      if(difference.magnitude<points[i].radius){
        points[i].color = "rgba(0,0,255,1)";
-       hit++
+       hit++;
      };
    }
    console.log(hit);
-  if(hit>= maxPoints){
+  if(hit >= maxPoints){
     hit = 0;
     counter = 0;
     points.splice(0,maxPoints)
