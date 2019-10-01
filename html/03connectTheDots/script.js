@@ -30,8 +30,6 @@ function animate()
     context.lineTo(points[i].position.dx,points[i].position.dy)
   }
 
-  //context.lineTo(points[0].position.dx,points[0].position.dy);
-
   context.closePath();
   context.fillStyle="grey";
   context.fill();
