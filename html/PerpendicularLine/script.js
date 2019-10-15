@@ -3,14 +3,14 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let a = new Point(200,200,20,"rgb(3, 252, 182)");
-let b = new Point(600,300,20,"rgb(3, 252, 182)");
-let c = new Point(200,500,20,"rgb(3, 252, 182)");
+let a = new Point(390, 200, 20, "rgb(3, 252, 182)");
+let b = new Point(690, 200, 20, "rgb(3, 252, 182)");
+let c = new Point(390, 500, 20, "rgb(3, 252, 182)");
 
-let s = new Point(0,0,10,"grey");
+let s = new Point(0, 0, 10, "grey");
 
-let l = new LinearFunction(1,1);
-let m = new LinearFunction(1,1);
+let l = new LinearFunction(0, 0);
+let m = new LinearFunction(0, 0);
 
 a.drag();
 b.drag();
@@ -33,6 +33,7 @@ function animate(){
   a.draw(context);
   b.draw(context);
   c.draw(context);
+
   s.draw(context);
 
   a.printText("A");
