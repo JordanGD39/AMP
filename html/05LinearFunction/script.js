@@ -1,4 +1,3 @@
-
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -9,6 +8,7 @@ let b = new Point(600,300,20,"rgb(3, 252, 182)");
 let l = new LinearFunction(0.5,0.5, "grey");
 let c = new Point(100,l.calcY(100),10);
 let d = new Point(500,l.calcY(500),10);
+
 a.drag();
 b.drag();
 
