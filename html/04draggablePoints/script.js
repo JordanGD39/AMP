@@ -7,9 +7,9 @@ let points = [];
 
 let mouseVector = new Vector2d(0,0);
 
-for (let i = 0; i < 6; i++)
+for (let i = 0; i < 4; i++)
 {
-  points[i] = new Point(getRandom(canvas.width),getRandom(canvas.height),20,"rgb(3, 252, 182)", i);
+  points[i] = new Point(getRandom(canvas.width),getRandom(canvas.height),20,"rgb(3, 252, 182)");
   points[i].drag();
 }
 
