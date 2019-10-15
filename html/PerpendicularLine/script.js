@@ -33,7 +33,6 @@ function animate(){
   a.draw(context);
   b.draw(context);
   c.draw(context);
-
   s.draw(context);
 
   a.printText("A");
