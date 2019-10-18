@@ -9,8 +9,7 @@ let mouseVector = new Vector2d(0,0);
 
 for (let i = 0; i < 4; i++)
 {
-  points[i] = new Point(getRandom(canvas.width),getRandom(canvas.height),20,"rgb(3, 252, 182)");
-  points[i].drag();
+  points[i] = new Point(new Vector2d(getRandom(canvas.width),getRandom(canvas.height)),20,"rgb(3, 252, 182)", true);
 }
 
 
@@ -20,11 +19,11 @@ function animate(){
   context.beginPath();
   context.fillStyle = "grey";
 
-  context.moveTo(points[0].x,points[0].y);
+  context.moveTo(points[0].position.dx,points[0].position.dy);
 
   for (let i = 0; i < points.length; i++)
   {
-    context.lineTo(points[i].x,points[i].y)
+    context.lineTo(points[i].position.dx,points[i].position.dy)
   }
 
   context.fill();
