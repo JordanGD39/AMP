@@ -5,50 +5,54 @@ canvas.height = window.innerHeight;
 
 let mouseVector = new Vector2d(0,0);
 
-let a = new Point(new Vector2d(100, 100), 20, "rgb(3, 252, 182)", true);
-let b = new Point(new Vector2d(500, 100), 20, "rgb(3, 252, 182)", true);
-let c = new Point(new Vector2d(300, 400), 20, "rgb(3, 252, 182)", true);
-
-let s = new Point(new Vector2d(0, 0), 10, "white");
+let  a = new Point(new Vector2d(100,110), 15, "rgb(3, 252, 182)",true);
+let  b = new Point(new Vector2d(500,100), 15,"rgb(3, 252, 182)" ,true);
+let  c = new Point(new Vector2d(300,500), 15, "rgb(3, 252, 182)",true);
+let  d = new Point(new Vector2d(0,0), 5, "black",false);
+let  e = new Point(new Vector2d(0,0), 5, "black",false);
+let  f = new Point(new Vector2d(0,0), 5, "black",false);
+let  s = new Point(new Vector2d(0,0), 5, "black",false);
 
 let l = new LinearFunction(1,1);
-let k = new LinearFunction(1,1);
 let m = new LinearFunction(1,1);
-
-let l2 = new LinearFunction(1,1);
-let k2 = new LinearFunction(1,1);
-let m2 = new LinearFunction(1,1);
+let n = new LinearFunction(1,1);
+let o = new LinearFunction(1,1);
+let p = new LinearFunction(1,1);
+let q = new LinearFunction(1,1);
 
 function animate(){
   context.clearRect(0,0,canvas.width,canvas.height);
   requestAnimationFrame(animate);
 
   l.defineLineWithTwoPoints(a,b);
-  k.defineLineWithTwoPoints(a,c);
-  m.defineLineWithTwoPoints(b,c);
+  m.defineLineWithTwoPoints(c,b);
+  n.defineLineWithTwoPoints(c,a);
 
-  l2.slope = -(1/m.slope);
-  l2.intercept = a.position.dy - l2.slope * a.position.dx;
-  m2.slope = -(1/k.slope);
-  m2.intercept = b.position.dy - m2.slope * b.position.dx;
-  k2.slope = -(1/l.slope);
-  k2.intercept = c.position.dy - k2.slope * c.position.dx;
+  o.calcPerp(d,l);
+  p.calcPerp(f,m);
+  q.calcPerp(e,n);
 
   l.draw(context);
-  k.draw(context);
   m.draw(context);
+  n.draw(context);
+  o.draw(context);
+  p.draw(context);
+  q.draw(context);
 
-  l2.draw(context);
-  k2.draw(context);
-  m2.draw(context);
+  d.CalcMiddle(a,b);
+  e.CalcMiddle(a,c);
+  f.CalcMiddle(b,c);
 
   a.draw(context);
   b.draw(context);
   c.draw(context);
+  d.draw(context);
+  e.draw(context);
+  f.draw(context);
 
-  s.position.dx = (m2.intercept - l2.intercept) / (l2.slope - m2.slope);
-  s.position.dy = (l2.slope * s.position.dx) + l2.intercept;
-
+  s.CalcCircleDistance(b, context);
+  s.position.dx = (p.intercept - o.intercept) / (o.slope - p.slope);
+  s.position.dy = (o.slope * s.position.dx) + o.intercept;
   s.draw(context);
 
   a.printText("A");
