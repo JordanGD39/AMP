@@ -104,3 +104,11 @@ function GetRandom(min, max)
 {
   return Math.random() * max + min;
 }
+
+function addBumper(count)
+{
+  for (var i = 0; i < count; i++) {
+    points[points.length] = new Point(new Vector2d(GetRandom(0, canvas.width), GetRandom(0, canvas.height)), 100, "red", true);
+  }
+  console.log("Bumper(s) added!");
+}
