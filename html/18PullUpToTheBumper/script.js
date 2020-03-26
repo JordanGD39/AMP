@@ -4,12 +4,12 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 let music = new Audio();
-music.src = "Sonic 1 Music Spring Yard Zone.mp3";
+music.src = "Audio/Sonic 1 Music Spring Yard Zone.mp3";
 music.volume = 0.4;
 music.loop = true;
 
 let sonic = new Image();
-sonic.src = "Sonic.png";
+sonic.src = "Img/Sonic.png";
 
 let rad = new Vector2d(1,1);
 let tan = new Vector2d(1,1);
@@ -59,7 +59,7 @@ function animate(){
 
   if (distance - points[pointIndex].r < movingPoint.r) {
     let bumperSFX = new Audio();
-    bumperSFX.src = "Bumper.mp3";
+    bumperSFX.src = "Audio/Bumper.mp3";
     bumperSFX.play();
     rad.magnitude = -rad.magnitude;
     movingPoint.vel.sumVector(rad, tan);
