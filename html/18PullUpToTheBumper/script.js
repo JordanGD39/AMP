@@ -17,13 +17,13 @@ let tan = new Vector2d(1,1);
 let points = [];
 
 for (var i = 0; i < 5; i++) {
-  points[i] = new Point(new Vector2d(GetRandom(0, canvas.width), GetRandom(0, canvas.height)), 100, "red", true);
+  points[i] = new Point(new Vector2d(GetRandom(0, canvas.width), GetRandom(0, canvas.height)), canvas.height * 0.125, "red", true);
   if (points[i].position.dx < canvas.width / 2 + points[i].r && points[i].position.dx > canvas.width / 2 - points[i].r) {
     points[i].position.dx += points[i].r * 2.5;
   }
 }
 
-let movingPoint = new DPoint(new Vector2d(canvas.width / 2, canvas.height / 2), 70, "blue", new Vector2d(10,10));
+let movingPoint = new DPoint(new Vector2d(canvas.width / 2, canvas.height / 2), canvas.height * 0.08, "blue", new Vector2d(canvas.height * 0.01, canvas.height * 0.01));
 
 function animate(){
   music.play();
@@ -39,7 +39,7 @@ function animate(){
   for (var i = 0; i < points.length; i++) {
     points[i].draw(context);
     points[i].printText("Drag me for sound!", "white");
-    drawStar(points[i].position.dx , points[i].position.dy, 5, 70, 35, context);
+    drawStar(points[i].position.dx , points[i].position.dy, 5, points[i].r * 0.7, points[i].r * 0.35, context);
     let tempDistance = movingPoint.distanceToAnOtherPoint(points[i].position);
     if (tempDistance < distance) {
       pointIndex = i;
